@@ -15,11 +15,35 @@
   background-image: url(images/shape-3.png);
   background-repeat: no-repeat;
   background-size: 8rem;
-  background-position-x: 16rem;
+  background-position-x: 10rem;
   background-position-y: 4rem;
-  background-image: url(images/shape-4.png);
 }
 .container .app .img img {
-  width: 50%;
+  padding-right: 1rem;
+  width: 55%;
+  height: 100%;
   float: right;
+}
+.app-text {
+  margin-left: 5rem;
+}
+.container .app .app-text h2 {
+  font-size: 2.7rem;
+  font-weight: bolder;
+  padding-top: 5rem;
+  padding-bottom: 1rem;
+}
+.app-text p {
+  font-size: 1.2rem;
+  text-align: justify;
+  padding-right: 6rem;
+  padding-bottom: 1rem;
+}
+.btn {
+  padding: 12px 30px;
+  background-color: rgb(253, 74, 74);
+  color: white;
+  font-weight: bold;
+  border-style: none;
+  border-radius: 5px;
 }
