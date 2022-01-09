@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .feild{
+            height: 300px;
+            width: 900px;
+            border: 1px solid green;
+        }
+        .bat{
+            width: 200px;
+            transition: transform, 0.3s ease-in;
+        }
+        .feild:hover .bat{
+            transform: rotate(-60deg);
+            transform-origin: top right;
+        }
+        .ball{
+            width: 25px;
+            height: 25px;
+            background-color: rgb(114, 16, 16);
+            border-radius: 25px;
+            position: relative;
+            left: 262px;
+            transition: transform 0.5s ease-out 0.4s;
+        }
+        .feild:hover .ball{
+            transform: translate(550px, -150px);
+        }
+    </style>
+</head>
+<body>
+    <div class="feild">
+        
+            <img class="bat" src="images/bat.png" alt="">
+        
+        <div class="ball">
+
+        </div>
+    </div>
+</body>
+</html>
