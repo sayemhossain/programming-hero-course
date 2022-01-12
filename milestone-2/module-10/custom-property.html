@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Property</title>
+    <style>
+        :root{
+            --text-color: red;
+            --bg-color: gray;
+            --font-size: 20px;
+            --center:center;
+        }
+        h1{
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        p{
+            color: var(--text-color);
+        }
+        footer p{
+            background-color: var(--bg-color);
+            text-align: var(--center);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore autem quos ipsum deleniti aliquid, itaque
+            assumenda totam beatae eius illum!</h1>
+    </header>
+    <main>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, aut?</p>
+        <p>Perferendis ipsum aliquam saepe illum, totam aperiam eos incidunt deserunt.</p>
+        <p>Inventore est expedita, dolorem suscipit totam repellendus debitis quidem non?</p>
+    </main>
+    <footer>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </footer>
+</body>
+
+</html>
