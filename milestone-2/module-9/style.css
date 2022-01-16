@@ -132,7 +132,7 @@ hr {
   grid-column-gap: 23.61px;
 }
 .course {
-  padding: 11px;
+  padding: 11px 0;
   box-shadow: 5px 5px 20px rgb(229, 232, 235);
   border-radius: 10px;
   display: flex;
