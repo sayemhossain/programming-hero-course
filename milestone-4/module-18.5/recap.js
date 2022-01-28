@@ -1,4 +1,6 @@
 var favoriteBook = "math";
+
+// Array
 var bookList = ["bangla", "english", "physic", "higher math"];
 
 var physicBookIndex = bookList.indexOf("physic");
