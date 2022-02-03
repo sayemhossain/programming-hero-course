@@ -1,4 +1,4 @@
-var signal = "red";
+var signal = "green";
 if (signal == "red") {
   console.log("Danger! Don't move.");
 } else if (signal == "yellow") {
