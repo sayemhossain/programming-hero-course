@@ -1,12 +1,12 @@
-// function compare(a, b) {
-//   if (a == b) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// }
-// const result = compare(15, "15");
-// console.log(result);
+function compare(a, b) {
+  if (a == b) {
+    return true;
+  } else {
+    return false;
+  }
+}
+const result = compare(15, "15");
+console.log(result);
 
 const array = [1, 2, 3, 4, 5, 6, 7];
 
