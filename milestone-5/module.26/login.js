@@ -10,7 +10,3 @@ document.getElementById("login-btn").addEventListener("click", function () {
     console.log("Invalid User");
   }
 });
-
-document.getElementById("deposit-btn").addEventListener("click", function () {
-  console.log("Button Click");
-});

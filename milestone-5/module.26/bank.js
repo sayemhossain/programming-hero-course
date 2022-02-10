@@ -1,9 +1,14 @@
 document.getElementById("deposit-btn").addEventListener("click", function () {
   // get the amount deposit
   const depositInput = document.getElementById("deposit-amount");
-  const depositeAmount = depositInput.value;
+  const newDepositAmount = depositInput.value;
   //   showing in deposit
-  document.getElementById("totalDeposit").innerText = depositeAmount;
+  const totalDeposit = document.getElementById("totalDeposit");
+  const previousDepositAmount = totalDeposit.innerText;
+  // add money
+  const totalNewDeposit =
+    parseFloat(previousDepositAmount) + parseFloat(newDepositAmount);
+  totalDeposit.innerText = totalNewDeposit;
   //   clear deposit input feild
   depositInput.value = "";
 });
