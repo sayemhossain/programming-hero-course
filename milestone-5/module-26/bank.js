@@ -2,13 +2,17 @@ function getInputValue(inputId) {
   const inputFeild = document.getElementById(inputId);
   const newInputText = inputFeild.value;
   const newAmount = parseFloat(newInputText);
-
   //   clear input feild
   inputFeild.value = "";
-
   return newAmount;
 }
-
+function updateTotalFeild(totalFeildId, newAmount) {
+  const totalAmount = document.getElementById(totalFeildId);
+  const previousAmountText = totalAmount.innerText;
+  const previousAmount = parseFloat(previousAmountText);
+  const totalNewAmount = previousAmount + newAmount;
+  totalAmount.innerText = totalNewAmount;
+}
 // this is for deposit
 document.getElementById("deposit-btn").addEventListener("click", function () {
   // get the amount deposit
@@ -17,13 +21,13 @@ document.getElementById("deposit-btn").addEventListener("click", function () {
   // const newDepositAmount = parseFloat(newDepositText);
   const newDepositAmount = getInputValue("deposit-amount");
 
-  //   showing in deposit
-  const totalDeposit = document.getElementById("totalDeposit");
-  const previousDepositText = totalDeposit.innerText;
-  const previousDepositAmount = parseFloat(previousDepositText);
-  // add money
-  const totalNewDeposit = previousDepositAmount + newDepositAmount;
-  totalDeposit.innerText = totalNewDeposit;
+  //   get and update deposit total
+  // const totalDeposit = document.getElementById("totalDeposit");
+  // const previousDepositText = totalDeposit.innerText;
+  // const previousDepositAmount = parseFloat(previousDepositText);
+  // const totalNewDeposit = previousDepositAmount + newDepositAmount;
+  // totalDeposit.innerText = totalNewDeposit;
+  updateTotalFeild("totalDeposit", newDepositAmount);
 
   // update account balance
   const totalBalance = document.getElementById("totalBalance");
@@ -44,13 +48,13 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
   // const newWithdrawAmount = parseFloat(newWithdrawText);
 
   const newWithdrawAmount = getInputValue("withdraw-amount");
-  //   showing in withdraw
-  const totalWithdraw = document.getElementById("totalWithdraw");
-  const previousWithdrawText = totalWithdraw.innerText;
-  const previousWithdrawAmount = parseFloat(previousWithdrawText);
-  // add money
-  const totalNewWithdraw = previousWithdrawAmount + newWithdrawAmount;
-  totalWithdraw.innerText = totalNewWithdraw;
+  //   get and update withdraw total
+  // const totalWithdraw = document.getElementById("totalWithdraw");
+  // const previousWithdrawText = totalWithdraw.innerText;
+  // const previousWithdrawAmount = parseFloat(previousWithdrawText);
+  // const totalNewWithdraw = previousWithdrawAmount + newWithdrawAmount;
+  // totalWithdraw.innerText = totalNewWithdraw;
+  updateTotalFeild("totalWithdraw", newWithdrawAmount);
 
   // update account balance
   const totalBalance = document.getElementById("totalBalance");
