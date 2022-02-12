@@ -1,12 +1,12 @@
-function getInputValue() {
-  const depositInput = document.getElementById("deposit-amount");
-  const newDepositText = depositInput.value;
-  const newDepositAmount = parseFloat(newDepositText);
+function getInputValue(inputId) {
+  const inputFeild = document.getElementById(inputId);
+  const newInputText = inputFeild.value;
+  const newAmount = parseFloat(newInputText);
 
-  //   clear deposit input feild
-  depositInput.value = "";
+  //   clear input feild
+  inputFeild.value = "";
 
-  return newDepositAmount;
+  return newAmount;
 }
 
 // this is for deposit
@@ -15,7 +15,7 @@ document.getElementById("deposit-btn").addEventListener("click", function () {
   // const depositInput = document.getElementById("deposit-amount");
   // const newDepositText = depositInput.value;
   // const newDepositAmount = parseFloat(newDepositText);
-  const newDepositAmount = getInputValue();
+  const newDepositAmount = getInputValue("deposit-amount");
 
   //   showing in deposit
   const totalDeposit = document.getElementById("totalDeposit");
@@ -39,9 +39,11 @@ document.getElementById("deposit-btn").addEventListener("click", function () {
 // this is for withdraw
 document.getElementById("withdraw-btn").addEventListener("click", function () {
   // get the amount withdraw
-  const withdrawInput = document.getElementById("withdraw-amount");
-  const newWithdrawText = withdrawInput.value;
-  const newWithdrawAmount = parseFloat(newWithdrawText);
+  // const withdrawInput = document.getElementById("withdraw-amount");
+  // const newWithdrawText = withdrawInput.value;
+  // const newWithdrawAmount = parseFloat(newWithdrawText);
+
+  const newWithdrawAmount = getInputValue("withdraw-amount");
   //   showing in withdraw
   const totalWithdraw = document.getElementById("totalWithdraw");
   const previousWithdrawText = totalWithdraw.innerText;
@@ -58,5 +60,5 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
   totalBalance.innerText = totalNewBalance;
 
   //   clear whithdraw input feild
-  withdrawInput.value = "";
+  // withdrawInput.value = "";
 });
