@@ -53,3 +53,9 @@ document.getElementById("remove-phone").addEventListener("click", function () {
 document.getElementById("remove-case").addEventListener("click", function () {
   removeItems("case");
 });
+
+// check out
+document.getElementById("check-out").addEventListener("click", function () {
+  alert("Congratulation...! Your shopping is complete.");
+  window.location.href = "index.html";
+});
