@@ -14,10 +14,17 @@ function updateTotalFeild(totalFeildId, newAmount) {
   totalAmount.innerText = totalNewAmount;
 }
 
-function updateBalance(newAmount, isAdd) {
-  const totalBalance = document.getElementById("totalBalance");
+function getCurrentBalance() {
   const previousTotalBalanceText = totalBalance.innerText;
   const previousTotalBalance = parseFloat(previousTotalBalanceText);
+  return previousTotalBalance;
+}
+
+function updateBalance(newAmount, isAdd) {
+  const totalBalance = document.getElementById("totalBalance");
+  // const previousTotalBalanceText = totalBalance.innerText;
+  // const previousTotalBalance = parseFloat(previousTotalBalanceText);
+  const previousTotalBalance = getCurrentBalance();
   if (isAdd == true) {
     const totalNewBalance = previousTotalBalance + newAmount;
     totalBalance.innerText = totalNewBalance;
@@ -28,11 +35,15 @@ function updateBalance(newAmount, isAdd) {
 }
 // this is for deposit
 document.getElementById("deposit-btn").addEventListener("click", function () {
+  const newDepositAmount = getInputValue("deposit-amount");
+  if (newDepositAmount > 0) {
+    updateTotalFeild("totalDeposit", newDepositAmount);
+    updateBalance(newDepositAmount, true);
+  }
   // get the amount deposit
   // const depositInput = document.getElementById("deposit-amount");
   // const newDepositText = depositInput.value;
   // const newDepositAmount = parseFloat(newDepositText);
-  const newDepositAmount = getInputValue("deposit-amount");
 
   //   get and update deposit total
   // const totalDeposit = document.getElementById("totalDeposit");
@@ -40,7 +51,6 @@ document.getElementById("deposit-btn").addEventListener("click", function () {
   // const previousDepositAmount = parseFloat(previousDepositText);
   // const totalNewDeposit = previousDepositAmount + newDepositAmount;
   // totalDeposit.innerText = totalNewDeposit;
-  updateTotalFeild("totalDeposit", newDepositAmount);
 
   // update account balance
   // const totalBalance = document.getElementById("totalBalance");
@@ -48,7 +58,6 @@ document.getElementById("deposit-btn").addEventListener("click", function () {
   // const previousTotalBalance = parseFloat(previousTotalBalanceText);
   // const totalNewBalance = previousTotalBalance + newDepositAmount;
   // totalBalance.innerText = totalNewBalance;
-  updateBalance(newDepositAmount, true);
 
   //   clear deposit input feild
   // depositInput.value = "";
@@ -56,19 +65,26 @@ document.getElementById("deposit-btn").addEventListener("click", function () {
 
 // this is for withdraw
 document.getElementById("withdraw-btn").addEventListener("click", function () {
+  const newWithdrawAmount = getInputValue("withdraw-amount");
+  const currentBalance = getCurrentBalance();
+  if (newWithdrawAmount > 0 && newWithdrawAmount <= currentBalance) {
+    updateTotalFeild("totalWithdraw", newWithdrawAmount);
+    updateBalance(newWithdrawAmount, false);
+  }
+  if (newWithdrawAmount > currentBalance) {
+    alert("You don't have enough money..!");
+  }
   // get the amount withdraw
   // const withdrawInput = document.getElementById("withdraw-amount");
   // const newWithdrawText = withdrawInput.value;
   // const newWithdrawAmount = parseFloat(newWithdrawText);
 
-  const newWithdrawAmount = getInputValue("withdraw-amount");
   //   get and update withdraw total
   // const totalWithdraw = document.getElementById("totalWithdraw");
   // const previousWithdrawText = totalWithdraw.innerText;
   // const previousWithdrawAmount = parseFloat(previousWithdrawText);
   // const totalNewWithdraw = previousWithdrawAmount + newWithdrawAmount;
   // totalWithdraw.innerText = totalNewWithdraw;
-  updateTotalFeild("totalWithdraw", newWithdrawAmount);
 
   // update account balance
   // const totalBalance = document.getElementById("totalBalance");
@@ -76,8 +92,6 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
   // const previousTotalBalance = parseFloat(previousTotalBalanceText);
   // const totalNewBalance = previousTotalBalance - newWithdrawAmount;
   // totalBalance.innerText = totalNewBalance;
-
-  updateBalance(newWithdrawAmount, false);
 
   //   clear whithdraw input feild
   // withdrawInput.value = "";
