@@ -3,6 +3,8 @@ document.getElementById("pin-btn").addEventListener("click", function () {
   document.getElementById("pin-feild").value = pin;
 });
 document.getElementById("number").addEventListener("click", function (event) {
-  const typedNumber = event.target.innerText;
-  document.getElementById("number-feild").value = typedNumber;
+  const newNumber = event.target.innerText;
+  let typedNumber = document.getElementById("number-feild");
+  const previousNumber = typedNumber.value;
+  typedNumber.value = previousNumber + newNumber;
 });
