@@ -29,6 +29,8 @@ document.getElementById("submit-btn").addEventListener("click", function () {
   if (pin == number) {
     match.style.display = "block";
     notMatch.style.display = "none";
+    pinValue.value = "";
+    calcValue.value = "";
   } else {
     notMatch.style.display = "block";
     match.style.display = "none";
@@ -42,7 +44,6 @@ document.getElementById("submit-btn").addEventListener("click", function () {
       }
       tryLeft.innerText = tryNumber;
     }
+    calcValue.value = "";
   }
-  pinValue.value = "";
-  calcValue.value = "";
 });
