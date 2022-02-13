@@ -27,7 +27,7 @@ const output = [];
 
 // startWith
 for (const product of products) {
-  if (product.toLowerCase().startsWith(searching.toLowerCase)) {
+  if (product.toLowerCase().startsWith(searching.toLowerCase())) {
     output.push(product);
   }
 }
