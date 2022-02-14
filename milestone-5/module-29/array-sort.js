@@ -5,3 +5,6 @@ const sortedNumbers = numbers.sort();
 const friends = ["badhon", "shanto", "nayan", "ullash", "uthso", "tusar"];
 const sortedFriends = friends.sort();
 console.log(sortedFriends);
+
+const reverseFriends = friends.reverse();
+console.log(reverseFriends);
