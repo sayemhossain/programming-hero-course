@@ -8,4 +8,13 @@ function addNumber(num1, num2) {
   return result;
 }
 const sum = addNumber(23, 13, 50, 100, 420);
-console.log(sum);
+// console.log(sum);
+
+function getFullName(firstName, lastName) {
+  let fullName = "";
+  for (const part of arguments) {
+    fullName = fullName + part + " ";
+  }
+  return fullName;
+}
+console.log(getFullName("AKA", "Abul", "Klam", "Azad"));
