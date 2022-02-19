@@ -4,4 +4,9 @@ for (const number of numbers) {
   const result = number * 2;
   output.push(result);
 }
-console.log(output);
+// console.log(output);
+
+// using map
+const doubleIt = (number) => number * 2;
+const output2 = numbers.map(doubleIt);
+console.log(output2);
