@@ -6,4 +6,9 @@ const fish = {
   address: "Chadpur",
   dress: "silver",
 };
-// console.log(fish.phone);
+const phone = fish.phone;
+const name = fish.name;
+console.log(phone);
+console.log(phone, name);
+console.log(phone);
+console.log(phone);
