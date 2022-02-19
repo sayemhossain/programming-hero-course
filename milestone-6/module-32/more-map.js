@@ -10,6 +10,9 @@ const products = [
 ];
 const productName = products.map((product) => product.name);
 const productPrices = products.map((product) => product.price);
-products.map((product) => console.log(product));
-console.log(productName);
-console.log(productPrices);
+// products.map((product) => console.log(product));
+// console.log(productName);
+// console.log(productPrices);
+
+// forEach loop
+products.forEach((product) => console.log(product));
