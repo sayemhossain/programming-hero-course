@@ -6,9 +6,12 @@ const fish = {
   address: "Chadpur",
   dress: "silver",
 };
-const phone = fish.phone;
-const name = fish.name;
+// const phone = fish.phone;
+// const name = fish.name;
+
+const { phone, price, dress } = fish;
+
 console.log(phone);
-console.log(phone, name);
+console.log(phone, dress);
 console.log(phone);
-console.log(phone);
+console.log(phone, price);
