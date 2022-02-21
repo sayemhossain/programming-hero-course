@@ -20,3 +20,20 @@ function displayPosts(posts) {
     console.log(post);
   }
 }
+
+//post a data
+function addAPost() {
+  fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    body: JSON.stringify({
+      title: "my new post",
+      body: "This is my post",
+      id: 1,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((response) => response, json())
+    .then((data) => console.log(data));
+}
