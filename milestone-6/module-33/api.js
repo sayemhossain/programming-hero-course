@@ -11,9 +11,10 @@ const stringified = JSON.stringify(user);
 const shop = {
   name: "Alia store",
   address: "dhanmondi",
+  profit: 15000,
   products: ["laptop", "mobile", "pepsi"],
   isExpensive: false,
 };
 const shopStringified = JSON.stringify(shop);
-console.log(shop);
+// console.log(shop);
 console.log(shopStringified);
