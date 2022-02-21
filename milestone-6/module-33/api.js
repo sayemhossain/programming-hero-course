@@ -3,4 +3,17 @@ const user = {
   name: "sayem hossain",
   job: "web developer",
 };
-console.log(user);
+
+const stringified = JSON.stringify(user);
+// console.log(user);
+// console.log(stringified);
+
+const shop = {
+  name: "Alia store",
+  address: "dhanmondi",
+  products: ["laptop", "mobile", "pepsi"],
+  isExpensive: false,
+};
+const shopStringified = JSON.stringify(shop);
+console.log(shop);
+console.log(shopStringified);
