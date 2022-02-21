@@ -6,7 +6,10 @@ function loadData() {
 function loadUsers() {
   fetch("https://jsonplaceholder.typicode.com/users")
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => displayUsersData(data));
+}
+function displayUsersData(data) {
+  console.log(data);
 }
 function loadPost() {
   fetch("https://jsonplaceholder.typicode.com/posts")
