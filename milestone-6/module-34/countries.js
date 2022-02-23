@@ -26,7 +26,6 @@ const loadCountryByName = (name) => {
     .then((data) => displayCountryDetails(data[0]));
 };
 const displayCountryDetails = (country) => {
-  console.log(country);
   const countryDiv = document.getElementById("country-details");
   countryDiv.innerHTML = `
   <h5>${country.name.common}</h5>
