@@ -17,7 +17,8 @@ const displayCountries = (countries) => {
     div.innerHTML = `
     <h3>${country.name.common}</h3>
     <p>${country.capital}</p>
-    <button onclick="loadCountryByName(name)">Details</button>
+    <button onclick="loadCountryByName('${country.name.common}'
+    )">Details</button>
     `;
     countriesDiv.appendChild(div);
   }
