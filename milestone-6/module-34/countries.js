@@ -3,14 +3,25 @@ const loadCountries = () => {
     .then((res) => res.json())
     .then((data) => displayCountries(data));
 };
+loadCountries();
 const displayCountries = (countries) => {
   //   console.log(countries);
   const countriesDiv = document.getElementById("countries");
   for (const country of countries) {
-    console.log(country);
-    const p = document.createElement("p");
-    p.innerText = country.name.common;
-    countriesDiv.appendChild(p);
+    // console.log(country);
+    // const p = document.createElement("p");
+    // p.innerText = country.name.common;
+    // countriesDiv.appendChild(p);
+    const div = document.createElement("div");
+    div.classList.add("country");
+    div.innerHTML = `
+    <h3>${country.name.common}</h3>
+    <p>${country.capital}</p>
+    <button onclick="loadCountryByName(name)">Details</button>
+    `;
+    countriesDiv.appendChild(div);
   }
 };
-loadCountries();
+const loadCountryByName = (name) => {
+  console.log(name);
+};
