@@ -28,6 +28,15 @@ const loadCountryByName = (name) => {
   `;
   fetch(url)
     .then((res) => res.json())
-    .then((data) => console.log(data[0]));
+    .then((data) => displayCountryDetails(data[0]));
   // console.log(url);
+};
+const displayCountryDetails = (country) => {
+  console.log(country);
+  const countryDiv = document.getElementById("country-details");
+  countryDiv.innerHTML = `
+  <h5>${country.name.common}</h5>
+  <p>Population: ${country.population}</p>
+  <img src="${country.flags.png}">
+  `;
 };
