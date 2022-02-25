@@ -1,7 +1,7 @@
 const searchFood = () => {
   const searchFeild = document.getElementById("search-feild");
   const searchText = searchFeild.value;
-  console.log(searchText);
+  // console.log(searchText);
   searchFeild.value = "";
 
   // fetching data from api
@@ -15,11 +15,13 @@ const displaySearchResult = (meals) => {
   // console.log(meals);
   const searchResult = document.getElementById("search-result");
   meals.forEach((meal) => {
-    console.log(meal);
+    // console.log(meal);
     const div = document.createElement("div");
     div.classList.add("col");
     div.innerHTML = `
-    <div class="card" style="height:40rem">
+    <div onclick="loadMealDetail(${
+      meal.idMeal
+    })" class="card" style="height:40rem; width:22rem">
             <img src="${meal.strMealThumb}" class="card-img-top " alt="...">
             <div class="card-body">
               <h5 class="card-title">${meal.strMeal}</h5>
@@ -29,4 +31,7 @@ const displaySearchResult = (meals) => {
     `;
     searchResult.appendChild(div);
   });
+};
+const loadMealDetail = (mealId) => {
+  console.log(mealId);
 };
