@@ -14,4 +14,13 @@ const values = Object.values(bottle);
 
 // getting keys and values at a time
 const pairs = Object.entries(bottle);
-console.log(pairs);
+// console.log(pairs);
+
+//deleting form objecct
+delete bottle.isCleaned;
+// console.log(bottle);
+
+//seal object
+Object.seal(bottle);
+delete bottle.isCleaned;
+// console.log(bottle);
