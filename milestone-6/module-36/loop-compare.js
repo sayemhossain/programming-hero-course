@@ -1,3 +1,8 @@
+/*
+for of-----array
+for in-----object
+*/
+
 const bottle = {
   color: "yellow",
   hold: "water",
