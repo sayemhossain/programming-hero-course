@@ -8,5 +8,4 @@ Data types:::
 6.symbol
 -----non-primitive----
 7.object
-
 */
