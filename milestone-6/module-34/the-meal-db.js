@@ -1,25 +1,30 @@
 const searchFood = () => {
   const searchFeild = document.getElementById("search-feild");
-  const searchText = searchFeild.value;
-  // console.log(searchText);
+  let searchText = searchFeild.value;
   searchFeild.value = "";
-
-  // fetching data from api
-  const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
-  // console.log(url);
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => displaySearchResult(data.meals));
+  if (searchText == "") {
+    console.log("please give something");
+  } else {
+    // fetching data from api
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => displaySearchResult(data.meals));
+  }
 };
 
 const displaySearchResult = (meals) => {
-  // console.log(meals);
   const searchResult = document.getElementById("search-result");
-  meals.forEach((meal) => {
-    // console.log(meal);
-    const div = document.createElement("div");
-    div.classList.add("col");
-    div.innerHTML = `
+  //removing previous result
+  // searchResult.innerHTML = "";
+  searchResult.textContent = "";
+  if (meals.length == 0) {
+    console.log("Hi");
+  } else {
+    meals.forEach((meal) => {
+      const div = document.createElement("div");
+      div.classList.add("col");
+      div.innerHTML = `
     <div onclick="loadMealDetail(${
       meal.idMeal
     })" class="card" style="height:40rem; width:22rem">
@@ -32,12 +37,12 @@ const displaySearchResult = (meals) => {
             </div>
     </div>
     `;
-    searchResult.appendChild(div);
-  });
+      searchResult.appendChild(div);
+    });
+  }
 };
 
 const loadMealDetail = (mealId) => {
-  console.log(mealId);
   const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
   fetch(url)
     .then((res) => res.json())
