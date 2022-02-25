@@ -34,9 +34,8 @@ const displaySearchResult = (meals) => {
 };
 const loadMealDetail = (mealId) => {
   console.log(mealId);
-  const url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}";
-  console.log(url);
+  const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
   fetch(url)
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((data) => console.log(data.meals[0]));
 };
