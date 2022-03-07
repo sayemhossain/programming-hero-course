@@ -1,2 +1,1 @@
-const name = 15;
-document.getElementById("name");
+console.log("Alhamdullia, I am back");
