@@ -45,10 +45,23 @@ const getCart = () => {
 // this is for add to local storage
 const addProductToCart = (name) => {
   const cart = getCart();
-  cart[name] = 1;
-  console.log(cart);
+
+  //count product quantity
+  if (cart[name]) {
+    cart[name] = cart[name] + 1;
+  } else {
+    cart[name] = 1;
+  }
   const cartStringified = JSON.stringify(cart);
   localStorage.setItem("cart", cartStringified);
+};
+
+//this is for placce order
+const placeOrder = () => {
+  document.getElementById("products").textContent = "";
+
+  //removing item from local storage
+  localStorage.removeItem("cart");
 };
 
 //this is simple call for previous local storage value
