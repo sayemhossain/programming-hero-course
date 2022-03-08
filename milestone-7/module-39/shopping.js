@@ -4,7 +4,9 @@ const addItem = () => {
   //display in the ui
   displayProduct(name);
   //add to local storage
-  addProductTOCart(name);
+  addProductToCart(name);
+
+  //empty the input feild
   inputField.value = "";
 };
 const displayProduct = (name) => {
@@ -23,8 +25,10 @@ const getCart = () => {
   }
   return cartObj;
 };
-const addProductTOCart = (name) => {
+const addProductToCart = (name) => {
   const cart = getCart();
   cart[name] = 1;
   console.log(cart);
+  const cartStringified = JSON.stringify(cart);
+  localStorage.setItem("cart", cartStringified);
 };
