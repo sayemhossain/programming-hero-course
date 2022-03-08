@@ -11,6 +11,6 @@ location.hash = "";
 history.back();
 history.go();
 
-//cookies
+// cookies
 
-//sessionStorage vs localStorage
+// sessionStorage vs localStorage
